@@ -103,22 +103,21 @@ const Dashboard = () => {
               skills: [
                 { name: "Python", logo: "/skills/python.jpeg" },
                 { name: "Java", logo: "/skills/java.png" },
-                { name: "C/C++", logo: "/skills/c++.png" },
-                { name: "JavaScript", logo: "/skills/javascript.png" },
                 { name: "SQL", logo: "/skills/sql.jpeg" },
-                { name: "Bash", logo: "/skills/bash.png" },
                 { name: "Git", logo: "/skills/git.png" }
               ]
             },
             {
               title: "Web Development Frameworks",
               skills: [
-                { name: "Flask", logo: "/skills/flask.png" },
                 { name: "HTML", logo: "/skills/html.png" },
                 { name: "CSS", logo: "/skills/css.png" },
-                { name: "PHP", logo: "/skills/php.png" },
+                { name: "JavaScript", logo: "/skills/javascript.png" },
                 { name: "ReactJS", logo: "/skills/reactjs.jpeg" },
-                { name: "NextJS", logo: "/skills/nextjs.png" }
+                { name: "Flask", logo: "/skills/flask.png" },
+                { name: "Node.js", logo: "/skills/nodejs.png" },
+                { name: "ExpressJS", logo: "/skills/expressjs.png" },
+                { name: "MongoDB", logo: "/skills/mongodb.png" },
               ]
             },
             {
@@ -131,28 +130,11 @@ const Dashboard = () => {
               ]
             },
             {
-              title: "Databases",
-              skills: [
-                { name: "DynamoDB", logo: "/skills/dynamodb.png" },
-                { name: "Aurora", logo: "/skills/aurora.jpeg" },
-                { name: "SQLite", logo: "/skills/sqlite.png" },
-                { name: "MySQL", logo: "/skills/mysql.png" },
-                { name: "Firestore", logo: "/skills/firestore.jpeg" }
-              ]
-            },
-            {
               title: "Cloud Technologies",
               skills: [
-                { name: "Firebase", logo: "/skills/firebase.png" },
+                { name: "Azure Cloud", logo: "/skills/azure.png" },
                 { name: "Google Cloud Platform", logo: "/skills/gcp.png" },
                 { name: "AWS", logo: "/skills/aws.png" }
-              ]
-            },
-            {
-              title: "Design Suite",
-              skills: [
-                { name: "Figma", logo: "/skills/figma.png" },
-                { name: "AdobeXD", logo: "/skills/adobexd.jpeg" }
               ]
             },
             {
