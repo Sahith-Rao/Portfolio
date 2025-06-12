@@ -14,6 +14,15 @@ const ProjectModal = ({ project, onClose }) => {
 
   if (!project) return null;
 
+  // Placeholder fields for now
+  const year = project.year || '2025';
+  const duration = project.duration || '3 Months';
+  const area = project.area || 'Web Development';
+  const techStack = project.techStack || 'React, Node.js, MongoDB';
+  const description = project.longDescription || 'This is a placeholder for the long project description. You can provide a custom description for each project.';
+  const badge = project.badge || '#1 in Projects Today';
+  const quote = project.quote || "This is a sample project quote or tagline.";
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,46 +36,85 @@ const ProjectModal = ({ project, onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="relative bg-zinc-900 rounded-xl shadow-2xl max-w-2xl w-full mx-4 overflow-hidden"
+        className="relative bg-zinc-900 rounded-2xl shadow-2xl max-w-5xl w-full mx-4 overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
+        {/* Close button */}
         <button
           className="absolute top-4 right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/70 transition-colors z-10"
           onClick={onClose}
         >
           ×
         </button>
-        <div className="flex flex-col md:flex-row">
+        {/* Top: Image with overlayed content */}
+        <div className="relative w-full h-[340px] md:h-[420px] bg-black">
           <img
             src={project.imageUrl}
             alt={project.title}
-            className="w-full md:w-1/2 h-60 md:h-auto object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+            className="w-full h-full object-cover"
           />
-          <div className="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
-              {(project.subtitle || project.period) && (
-                <div className="text-white/70 text-sm mb-2">
-                  {project.subtitle && <span>{project.subtitle}</span>}
-                  {project.subtitle && project.period && <span className="mx-1">•</span>}
-                  {project.period && <span>{project.period}</span>}
-                </div>
-              )}
-              {project.description && (
-                <p className="text-white/90 mb-4 text-base">{project.description}</p>
-              )}
-              {project.techStack && (
-                <p className="text-red-400 text-sm mb-2">{project.techStack}</p>
-              )}
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+          {/* Title, meta, buttons, quote */}
+          <div className="absolute left-0 bottom-0 w-full flex flex-col md:flex-row justify-between items-end p-8 gap-4">
+            <div className="flex-1 min-w-[220px]">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-white/80 text-base font-semibold">{year}</span>
+                <span className="text-white/80 text-base font-semibold">{duration}</span>
+                {/* Add more meta as needed */}
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 drop-shadow-lg">{project.title}</h2>
+              <div className="flex gap-3 mb-4">
+                {project.link && (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-black font-semibold px-6 py-2 rounded hover:bg-gray-200 transition-colors text-lg shadow">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M4.293 12.95a1 1 0 011.414 0L10 17.243l4.293-4.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414z" /></svg>
+                    View
+                  </a>
+                )}
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-black/60 text-white px-5 py-2 rounded hover:bg-black/80 transition-colors text-lg shadow">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.92.43.37.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.218.694.825.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                  </a>
+                )}
+                {/* Add more action buttons as needed */}
+              </div>
             </div>
-            <div className="flex gap-4 mt-4">
-              {project.github && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-white bg-black/40 px-3 py-1 rounded hover:bg-black/70 transition-colors">GitHub</a>
-              )}
-              {project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-white bg-red-600 px-3 py-1 rounded hover:bg-red-700 transition-colors">Visit</a>
-              )}
+            {/* Quote/tagline on the right, bottom */}
+            <div className="text-white text-lg md:text-xl font-medium text-right max-w-xs mb-2 md:mb-0 opacity-90 drop-shadow-lg">
+              {quote}
             </div>
+          </div>
+        </div>
+        {/* Bottom: Details section, two columns */}
+        <div className="flex flex-col md:flex-row w-full p-8 gap-8 bg-zinc-900">
+          {/* Left: badge, description, meta */}
+          <div className="flex-1 min-w-[220px]">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">{badge}</span>
+              {/* Add more badges as needed */}
+            </div>
+            <div className="text-white/90 text-base mb-4">
+              {description}
+            </div>
+            <div className="flex items-center gap-4 text-white/70 text-sm mb-2">
+              <span>{year}</span>
+              <span>•</span>
+              <span>{duration}</span>
+              {/* Add more meta as needed */}
+            </div>
+          </div>
+          {/* Right: Tech stack, area */}
+          <div className="flex-1 min-w-[220px]">
+            <div className="mb-4">
+              <span className="text-white font-semibold">Tech Stack: </span>
+              <span className="text-red-400">{techStack}</span>
+            </div>
+            <div className="mb-4">
+              <span className="text-white font-semibold">Area: </span>
+              <span className="text-white/80">{area}</span>
+            </div>
+            {/* Add more info as needed */}
           </div>
         </div>
       </motion.div>

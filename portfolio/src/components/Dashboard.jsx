@@ -46,7 +46,7 @@ const Dashboard = () => {
               period: "2024",
               description: "Educational platform for Telangana State Board students with interactive quizzes and map exercises.",
               techStack: "React, Node.js, Material UI, MongoDB, Express.js",
-              imageUrl: "https://i.ibb.co/RGcgMwXL/telangana2.jpg",
+              imageUrl: "/projects/blogspace.png",
               link: "https://blogspace-bay.vercel.app/",
               github: "https://github.com/Sahith-Rao/blog-space.git"
             },
