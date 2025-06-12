@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://streamvallabh.life/sitemap.xml
+
+# Disallow admin or private routes
+Disallow: /admin/
+Disallow: /private/ 

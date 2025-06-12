@@ -1,48 +1,254 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #121212;
-  color: #ffffff;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 9%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 9%;
+    --input: 0 0% 9%;
+    --ring: 0 85% 45%;
+    --radius: 0.5rem;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* Responsive Typography */
+@layer utilities {
+  .text-responsive {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl;
+  }
+  
+  .heading-responsive {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Mobile-First Card Styles */
+.netflix-card {
+  @apply relative overflow-hidden rounded-md transition-all duration-300;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
-::-webkit-scrollbar-track {
-  background: #1e1e1e;
+@media (hover: hover) {
+  .netflix-card:hover {
+    @apply scale-105 z-10;
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #2196f3;
-  border-radius: 4px;
+.netflix-card::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #1976d2;
+@media (hover: hover) {
+  .netflix-card:hover::after {
+    @apply opacity-100;
+  }
 }
 
-/* Remove default focus outline and add custom one */
-*:focus {
-  outline: none;
+/* Touch-Friendly Row Scrolling */
+.netflix-row {
+  @apply relative -mx-4 flex space-x-4 overflow-x-auto px-4 pb-4;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 1rem;
 }
 
-*:focus-visible {
-  outline: 2px solid #2196f3;
-  outline-offset: 2px;
+.netflix-row > * {
+  scroll-snap-align: start;
+}
+
+/* Mobile-Optimized Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive Animations */
+.netflix-logo {
+  animation: netflixIntro 4s ease-out forwards;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+@keyframes netflixIntro {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Touch-Friendly Profile Cards */
+.profile-card {
+  @apply relative cursor-pointer rounded-lg p-2 transition-all duration-300;
+  touch-action: manipulation;
+}
+
+@media (hover: hover) {
+  .profile-card:hover {
+    @apply scale-110;
+  }
+  
+  .profile-card:hover .profile-name {
+    @apply text-white;
+  }
+  
+  .profile-card:hover .profile-avatar {
+    @apply border-white;
+  }
+}
+
+.profile-avatar {
+  @apply h-24 w-24 sm:h-32 sm:w-32 rounded-lg border-2 border-transparent transition-all duration-300;
+}
+
+.profile-name {
+  @apply mt-4 text-center text-base sm:text-lg text-gray-400 transition-colors duration-300;
+}
+
+/* Mobile Navigation Styles */
+.mobile-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-lg z-50;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mobile-nav-item {
+  @apply flex flex-col items-center justify-center p-2 text-sm;
+}
+
+/* Responsive Grid Layouts */
+.responsive-grid {
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Mobile-Friendly Buttons */
+.mobile-button {
+  @apply px-4 py-2 rounded-lg text-white bg-primary transition-all duration-200;
+  min-height: 44px; /* Minimum touch target size */
+}
+
+@media (hover: hover) {
+  .mobile-button:hover {
+    @apply bg-primary/90;
+  }
+}
+
+/* Loading States */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-800 rounded;
+}
+
+/* Mobile Gesture Feedback */
+.touch-feedback {
+  @apply active:scale-95 transition-transform duration-100;
+}
+
+/* Safe Area Insets */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Responsive Spacing */
+.responsive-padding {
+  @apply p-4 sm:p-6 md:p-8;
+}
+
+.responsive-margin {
+  @apply m-4 sm:m-6 md:m-8;
+}
+
+/* Mobile-Optimized Images */
+.responsive-image {
+  @apply w-full h-auto object-cover;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile-Friendly Forms */
+.mobile-input {
+  @apply w-full px-4 py-3 rounded-lg bg-secondary text-white;
+  min-height: 44px;
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+/* Mobile Menu Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-enter {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Mobile Pull-to-Refresh Animation */
+@keyframes pullToRefresh {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.pull-to-refresh {
+  animation: pullToRefresh 1s ease-in-out;
 }
