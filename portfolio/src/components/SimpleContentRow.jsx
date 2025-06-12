@@ -15,11 +15,10 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   // Placeholder fields for now
-  const year = project.year || '2025';
-  const duration = project.duration || '3 Months';
-  const area = project.area || 'Web Development';
+  const year = project.year || project.period || '';
+  const domain = project.domain || project.area || '';
   const techStack = project.techStack || 'React, Node.js, MongoDB';
-  const description = project.longDescription || 'This is a placeholder for the long project description. You can provide a custom description for each project.';
+  const description = project.longDescription || project.description || 'This is a placeholder for the long project description. You can provide a custom description for each project.';
   const badge = project.badge || '#1 in Projects Today';
   const quote = project.quote || "This is a sample project quote or tagline.";
 
@@ -36,15 +35,15 @@ const ProjectModal = ({ project, onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.95, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="relative bg-zinc-900 rounded-2xl shadow-2xl max-w-5xl w-full mx-4 overflow-hidden"
+        className="relative bg-zinc-900 rounded-2xl shadow-2xl max-w-3xl w-full mx-4 overflow-hidden max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         {/* Close button */}
         <button
-          className="absolute top-4 right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/70 transition-colors z-10"
+          className="absolute top-4 right-4 text-white bg-black/70 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/90 transition-colors z-10 border-2 border-white/20"
           onClick={onClose}
         >
-          ×
+          <span className="text-2xl font-bold">×</span>
         </button>
         {/* Top: Image with overlayed content */}
         <div className="relative w-full h-[340px] md:h-[420px] bg-black">
@@ -55,19 +54,13 @@ const ProjectModal = ({ project, onClose }) => {
           />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-          {/* Title, meta, buttons, quote */}
+          {/* Title, meta, buttons */}
           <div className="absolute left-0 bottom-0 w-full flex flex-col md:flex-row justify-between items-end p-8 gap-4">
             <div className="flex-1 min-w-[220px]">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-white/80 text-base font-semibold">{year}</span>
-                <span className="text-white/80 text-base font-semibold">{duration}</span>
-                {/* Add more meta as needed */}
-              </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 drop-shadow-lg">{project.title}</h2>
               <div className="flex gap-3 mb-4">
                 {project.link && (
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-black font-semibold px-6 py-2 rounded hover:bg-gray-200 transition-colors text-lg shadow">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M4.293 12.95a1 1 0 011.414 0L10 17.243l4.293-4.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414z" /></svg>
                     View
                   </a>
                 )}
@@ -77,44 +70,32 @@ const ProjectModal = ({ project, onClose }) => {
                     GitHub
                   </a>
                 )}
-                {/* Add more action buttons as needed */}
               </div>
-            </div>
-            {/* Quote/tagline on the right, bottom */}
-            <div className="text-white text-lg md:text-xl font-medium text-right max-w-xs mb-2 md:mb-0 opacity-90 drop-shadow-lg">
-              {quote}
             </div>
           </div>
         </div>
         {/* Bottom: Details section, two columns */}
         <div className="flex flex-col md:flex-row w-full p-8 gap-8 bg-zinc-900">
-          {/* Left: badge, description, meta */}
+          {/* Left: description */}
           <div className="flex-1 min-w-[220px]">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded mr-2">{badge}</span>
-              {/* Add more badges as needed */}
-            </div>
             <div className="text-white/90 text-base mb-4">
               {description}
             </div>
-            <div className="flex items-center gap-4 text-white/70 text-sm mb-2">
-              <span>{year}</span>
-              <span>•</span>
-              <span>{duration}</span>
-              {/* Add more meta as needed */}
-            </div>
           </div>
-          {/* Right: Tech stack, area */}
-          <div className="flex-1 min-w-[220px]">
-            <div className="mb-4">
+          {/* Right: Domain, Tech stack, Year */}
+          <div className="flex-1 min-w-[220px] flex flex-col gap-2">
+            <div className="mb-1">
+              <span className="text-white font-semibold">Domain: </span>
+              <span className="text-white/80">{domain}</span>
+            </div>
+            <div className="mb-1">
               <span className="text-white font-semibold">Tech Stack: </span>
               <span className="text-red-400">{techStack}</span>
             </div>
-            <div className="mb-4">
-              <span className="text-white font-semibold">Area: </span>
-              <span className="text-white/80">{area}</span>
+            <div className="mb-1">
+              <span className="text-white font-semibold">Year: </span>
+              <span className="text-white/80">{year}</span>
             </div>
-            {/* Add more info as needed */}
           </div>
         </div>
       </motion.div>

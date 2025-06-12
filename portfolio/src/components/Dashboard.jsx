@@ -45,42 +45,33 @@ const Dashboard = () => {
               title: "BlogSpace",
               period: "2024",
               description: "Educational platform for Telangana State Board students with interactive quizzes and map exercises.",
+              longDescription: "BlogSpace is a full-stack blogging platform built using the MERN stack (MongoDB, Express.js, React, and Node.js), designed to offer users a secure and dynamic space to create, browse, and interact with blog posts. Users can register, log in, create and edit posts, and view their own content. The platform allows users to engage with blog content by posting comments under each article. Additionally, it integrates Cloudinary for efficient and scalable image handling—enabling users to upload and store post images securely in the cloud, with fast delivery and optimization. With a responsive UI design and real-time search functionality for filtering posts by title, BlogSpace ensures a seamless and user-friendly experience across devices.",
               techStack: "React, Node.js, Material UI, MongoDB, Express.js",
               imageUrl: "/projects/blogspace.png",
               link: "https://blogspace-bay.vercel.app/",
-              github: "https://github.com/Sahith-Rao/blog-space.git"
+              github: "https://github.com/Sahith-Rao/blog-space.git",
+              domain: "Web Development"
             },
             {
               title: "Metic Synergy Website",
-              period: "Dec 2024 - Apr 2025",
+              period: "2025",
               description: "Responsive corporate website using React, Node.js, and Tailwind CSS.",
-              techStack: "Node.js, React, Tailwind CSS, MongoDB, Express.js",
-              imageUrl: "https://i.postimg.cc/xC0WrB6B/logo.png",
-              link: "https://meticsynergy.com"
+              longDescription: "Metic Synergy is a full-stack web application built using React (with Vite), Express.js, and MongoDB, designed to showcase services, handle client interactions, and provide administrative insights. The platform includes an appointment booking feature that allows users to schedule services, and a client survey form to collect feedback. Once logged in, admins can access a protected dashboard where all booking requests and survey responses are displayed. Survey data is visualized using interactive bar and pie charts, enabling admins to analyze user sentiment and service performance effectively. ",
+              techStack: "Node.js, React JS, Tailwind CSS, MongoDB, Express.js",
+              imageUrl: "/projects/logo.png",
+              link: "https://meticsynergy.com",
+              github: "https://github.com/sreevallabh04/Metic-Synergy.git",
+              domain: "Web Development"
             },
             {
-              title: "VHTOP - Hostel Management Suite",
-              period: "March 2024",
-              description: "Management suite for hostel students integrating carpooling and various utilities.",
-              techStack: "NextJS, Firebase, React",
-              imageUrl: "https://i.postimg.cc/ZqzGHWpb/vitlogo.jpg",
-              link: "https://vhtop-six.vercel.app/"
-            },
-            {
-              title: "Sarah - AI-Driven Virtual Assistant",
+              title: "Face Emotion Detector",
               period: "2024",
-              description: "Open-source, AI-powered virtual assistant with speech recognition, NLP, and automation.",
-              techStack: "Python, Machine Learning, NLP",
-              imageUrl: "https://i.postimg.cc/yNhwb7yF/Sarah-AI-agent.jpg",
-              link: "https://github.com/sahithrao/AIzara"
-            },
-            {
-              title: "AI integrated Blockchain voting system",
-              period: "2024",
-              description: "Voting platform combining blockchain with AI for secure and intelligent elections.",
-              techStack: "Blockchain, AI, Solidity, ZKP, Groq LLM",
-              imageUrl: "https://i.postimg.cc/qvKf2stD/AIin-Blockchain.png",
-              link: "https://github.com/sahithrao/AI-Integrated-Advanced-Blockchain-Voting-system"
+              description: "A real-time emotion detection system that uses a CNN model to recognize facial emotions from webcam input via a Flask web application.",
+              longDescription: "A deep learning-based real-time facial emotion recognition system that uses a Convolutional Neural Network (CNN) to classify emotions from live webcam input. It detects faces using Haar cascades, processes them into 48×48 grayscale images, and predicts one of seven emotions using a Keras-trained model. The Flask backend handles image processing and model inference, while the frontend (HTML, CSS, JavaScript) captures video frames and displays predictions dynamically. This project combines computer vision and deep learning for interactive emotion analysis, with potential applications in mental health, virtual assistants, and human-computer interaction.",
+              techStack: "Tensorflow, Keras, OpenCV, Numpy Flask",
+              imageUrl: "/projects/emotion.png",
+              github: "https://github.com/Sahith-Rao/face-emotion-recognition.git",
+              domain: "Deep Learning"
             }
           ]
         },
