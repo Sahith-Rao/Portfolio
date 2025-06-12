@@ -188,74 +188,64 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
       >
         {isSkills ? (
           // Render skills
-          items.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="flex-shrink-0">
-              <h3 className="text-lg font-semibold text-white mb-3">{category.title}</h3>
-              <div className="flex space-x-4">
-                {category.skills.map((skill, skillIndex) => {
-                  const isHovered = hoveredIndex === `${categoryIndex}-${skillIndex}`;
-                  return (
-                    <motion.div
-                      key={skillIndex}
-                      onHoverStart={() => setHoveredIndex(`${categoryIndex}-${skillIndex}`)}
-                      onHoverEnd={() => setHoveredIndex(null)}
-                      animate={{
-                        scale: isHovered ? 1.04 : 1,
-                        zIndex: isHovered ? 20 : 1,
-                        transition: { 
-                          duration: 0.3,
-                          ease: [0.32, 0.72, 0, 1]
-                        }
-                      }}
-                      className="relative w-[200px] h-[200px] rounded-lg overflow-hidden cursor-pointer flex-shrink-0 bg-[#181818]"
-                    >
-                      {/* Background Image/Logo */}
+          items.flatMap((category, categoryIndex) =>
+            category.skills.map((skill, skillIndex) => {
+              const isHovered = hoveredIndex === `${categoryIndex}-${skillIndex}`;
+              return (
+                <motion.div
+                  key={`${categoryIndex}-${skillIndex}`}
+                  onHoverStart={() => setHoveredIndex(`${categoryIndex}-${skillIndex}`)}
+                  onHoverEnd={() => setHoveredIndex(null)}
+                  animate={{
+                    scale: isHovered ? 1.04 : 1,
+                    zIndex: isHovered ? 20 : 1,
+                    transition: { 
+                      duration: 0.3,
+                      ease: [0.32, 0.72, 0, 1]
+                    }
+                  }}
+                  className="relative w-[200px] h-[200px] rounded-lg overflow-hidden cursor-pointer flex-shrink-0 bg-[#181818]"
+                >
+                  {/* Background Image/Logo */}
+                  <motion.div
+                    className="w-full h-full flex items-center justify-center p-4"
+                    animate={{
+                      scale: isHovered ? 1.02 : 1,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    <img
+                      src={skill.logo}
+                      alt={`${skill.name} Logo`}
+                      className="w-24 h-24 object-contain"
+                    />
+                  </motion.div>
+                  {/* Static Info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                    <h3 className="text-base font-semibold text-white truncate mb-1">
+                      {skill.name}
+                    </h3>
+                  </div>
+                  {/* Hover Overlay */}
+                  <AnimatePresence>
+                    {isHovered && (
                       <motion.div
-                        className="w-full h-full flex items-center justify-center p-4"
-                        animate={{
-                          scale: isHovered ? 1.02 : 1,
-                          transition: { duration: 0.3 }
-                        }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex flex-col justify-end"
                       >
-                        <img
-                          src={skill.logo}
-                          alt={`${skill.name} Logo`}
-                          className="w-24 h-24 object-contain"
-                        />
+                        <div>
+                          <h3 className="text-base font-semibold text-white mb-1">{skill.name}</h3>
+                        </div>
                       </motion.div>
-
-                      {/* Static Info */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                        <h3 className="text-base font-semibold text-white truncate mb-1">
-                          {skill.name}
-                        </h3>
-                      </div>
-
-                      {/* Hover Overlay */}
-                      <AnimatePresence>
-                        {isHovered && (
-                          <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex flex-col justify-end"
-                          >
-                            <div>
-                              <h3 className="text-base font-semibold text-white mb-1">{skill.name}</h3>
-                              <p className="text-sm text-white/90">
-                                {category.title}
-                              </p>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          ))
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })
+          )
         ) : (
           // Render regular content
           items.map((item, index) => {
@@ -292,11 +282,6 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
                   <h3 className="text-base font-semibold text-white truncate mb-1">
                     {item.title}
                   </h3>
-                  {item.techStack && (
-                    <p className="text-xs font-medium text-red-400 truncate">
-                      {item.techStack}
-                    </p>
-                  )}
                 </div>
 
                 {/* Hover Overlay */}
