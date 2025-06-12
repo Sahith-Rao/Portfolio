@@ -80,17 +80,17 @@ const Dashboard = () => {
           items: [
             {
               title: "Research Intern",
-              subtitle: "Agriculture Domain Research - VIT Chennai",
-              period: "Jan. 2025 - Present",
+              subtitle: "Agriculture Domain Research - IIIT Sri City",
+              period: "June 2025 - July 2025",
               description: "Classification of spongy tissue disorder in mangoes using deep learning.",
-              imageUrl: "https://i.postimg.cc/ZqzGHWpb/vitlogo.jpg"
+              imageUrl: "/experience/iiit.png"
             },
             {
               title: "Freelance Web Developer",
               subtitle: "Metic Synergy Website",
               period: "Dec. 2024 - Apr. 2025",
               description: "Developed interactive corporate website with CMS and SEO improvements.",
-              imageUrl: "https://i.ibb.co/xKvG4qPV/IMG-1949.jpg"
+              imageUrl: "/experience/freelance.png"
             }
           ]
         },
