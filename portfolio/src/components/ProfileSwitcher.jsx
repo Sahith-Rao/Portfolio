@@ -7,7 +7,13 @@ const profiles = [
     id: 'recruiter', 
     name: 'Recruiter',
     color: 'bg-red-600',
-    avatar: '/avatars/avatar1.jpeg',
+    avatar: '/avatars/avatar1.png',
+  },
+  {
+    id: 'developer',
+    name: 'Developer',
+    color: 'bg-blue-600',
+    avatar: '/avatars/avatar2.png',
   }
 ];
 

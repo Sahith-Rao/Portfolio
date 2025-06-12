@@ -7,12 +7,24 @@ const profiles = [
     id: 'recruiter', 
     name: 'Recruiter',
     color: 'bg-red-600',  // Fallback color
-    avatar: '/avatars/avatar1.jpeg', 
+    avatar: '/avatars/avatar1.png', 
     content: {
       education: 'Vellore Institute of Technology, Chennai - Integrated MTech in Software Engineering',
       experience: 'Research Intern at VIT Chennai, Freelance Web Developer',
       projects: 'VHTOP - Hostel Management Suite, Sarah - AI Virtual Assistant',
       skills: 'Python, Java, JavaScript, NextJS, Machine Learning'
+    }
+  },
+  {
+    id: 'developer',
+    name: 'Developer',
+    color: 'bg-blue-600',  // Fallback color
+    avatar: '/avatars/avatar2.png',
+    content: {
+      education: 'Vellore Institute of Technology, Chennai - Integrated MTech in Software Engineering',
+      experience: 'Full Stack Developer, AI/ML Engineer',
+      projects: 'Portfolio Website, AI Projects, Web Applications',
+      skills: 'React, Node.js, Python, Machine Learning, Cloud Computing'
     }
   }
 ];
@@ -57,7 +69,7 @@ const ProfileSelection = ({ onProfileSelect }) => {
         Who's Watching?
       </h1>
 
-      <div className="flex justify-center items-center w-full max-w-4xl mx-auto">
+      <div className="flex justify-center items-center w-full max-w-4xl mx-auto gap-8 sm:gap-12 md:gap-16">
         {profiles.map((profile) => (
           <motion.div
             key={profile.id}

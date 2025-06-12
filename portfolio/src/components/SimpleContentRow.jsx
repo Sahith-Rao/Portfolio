@@ -1,10 +1,83 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+
+// ProjectModal component
+const ProjectModal = ({ project, onClose }) => {
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [onClose]);
+
+  if (!project) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="relative bg-zinc-900 rounded-xl shadow-2xl max-w-2xl w-full mx-4 overflow-hidden"
+        onClick={e => e.stopPropagation()}
+      >
+        <button
+          className="absolute top-4 right-4 text-white bg-black/40 rounded-full p-2 hover:bg-black/70 transition-colors z-10"
+          onClick={onClose}
+        >
+          ×
+        </button>
+        <div className="flex flex-col md:flex-row">
+          <img
+            src={project.imageUrl}
+            alt={project.title}
+            className="w-full md:w-1/2 h-60 md:h-auto object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+          />
+          <div className="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
+              {(project.subtitle || project.period) && (
+                <div className="text-white/70 text-sm mb-2">
+                  {project.subtitle && <span>{project.subtitle}</span>}
+                  {project.subtitle && project.period && <span className="mx-1">•</span>}
+                  {project.period && <span>{project.period}</span>}
+                </div>
+              )}
+              {project.description && (
+                <p className="text-white/90 mb-4 text-base">{project.description}</p>
+              )}
+              {project.techStack && (
+                <p className="text-red-400 text-sm mb-2">{project.techStack}</p>
+              )}
+            </div>
+            <div className="flex gap-4 mt-4">
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-white bg-black/40 px-3 py-1 rounded hover:bg-black/70 transition-colors">GitHub</a>
+              )}
+              {project.link && (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-white bg-red-600 px-3 py-1 rounded hover:bg-red-700 transition-colors">Visit</a>
+              )}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const SimpleContentRow = ({ title, items, isSkills }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isHoveringRow, setIsHoveringRow] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   const scrollRef = useRef(null);
 
   const scroll = (scrollOffset) => {
@@ -14,14 +87,12 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
   };
 
   const handleCardClick = (item, e) => {
-    // If the click is on a button or its children, don't navigate
     if (e.target.closest('button') || e.target.closest('a')) {
       return;
     }
-    
-    // If there's a project link, navigate to it
-    if (item.link) {
-      window.open(item.link, '_blank', 'noopener,noreferrer');
+    // If it's a project (not a skill), open modal
+    if (!isSkills) {
+      setSelectedProject(item);
     }
   };
 
@@ -100,7 +171,7 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
                       onHoverStart={() => setHoveredIndex(`${categoryIndex}-${skillIndex}`)}
                       onHoverEnd={() => setHoveredIndex(null)}
                       animate={{
-                        scale: isHovered ? 1.1 : 1,
+                        scale: isHovered ? 1.04 : 1,
                         zIndex: isHovered ? 20 : 1,
                         transition: { 
                           duration: 0.3,
@@ -113,7 +184,7 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
                       <motion.div
                         className="w-full h-full flex items-center justify-center p-4"
                         animate={{
-                          scale: isHovered ? 1.05 : 1,
+                          scale: isHovered ? 1.02 : 1,
                           transition: { duration: 0.3 }
                         }}
                       >
@@ -167,7 +238,7 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
                 onHoverEnd={() => setHoveredIndex(null)}
                 onClick={(e) => handleCardClick(item, e)}
                 animate={{
-                  scale: isHovered ? 1.1 : 1,
+                  scale: isHovered ? 1.04 : 1,
                   zIndex: isHovered ? 20 : 1,
                   transition: { 
                     duration: 0.3,
@@ -182,7 +253,7 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
                   alt={item.title}
                   className="w-full h-full object-cover"
                   animate={{
-                    scale: isHovered ? 1.05 : 1,
+                    scale: isHovered ? 1.02 : 1,
                     transition: { duration: 0.3 }
                   }}
                 />
@@ -267,6 +338,12 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
           })
         )}
       </div>
+      {/* Project Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

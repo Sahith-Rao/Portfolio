@@ -179,25 +179,25 @@ const Dashboard = () => {
           title: "Education & Coursework",
           items: [
             {
-              title: "Delhi Public School",
-              subtitle: "Nacharam, Hyderabad",
-              period: "June 2016 - March 2020",
-              description: "Completed secondary education.",
-              imageUrl: "/images/education/GIIS.png"
+              title: "Global Indian International School",
+              subtitle: "Uppal, Hyderabad",
+              period: "2015 - 2020",
+              description: "Secondary education",
+              imageUrl: "/education/GIIS.png"
             },
             {
               title: "Excellencia Junior College",
               subtitle: "Shamirpet, Hyderabad",
-              period: "June 2020 - March 2022",
-              description: "Focused on MPC stream for engineering entrances.",
-              imageUrl: "/images/education/excellencia.png"
+              period: "2020 - 2022",
+              description: "Intermediate education",
+              imageUrl: "/education/excellencia.png"
             },
             {
-              title: "VIT Chennai",
-              subtitle: "Vellore Institute of Technology, Chennai",
-              period: "Sep. 2022 - June 2027",
-              description: "Relevant coursework: DS, ML, OS, CN, SE, Cloud, DBMS, DevOps.",
-              imageUrl: "/images/education/cbit.png"
+              title: "Chaitanya Bharathi Institute of Technology",
+              subtitle: "Hyderabad",
+              period: "2022 - 2026",
+              description: "CSE (AI-ML)",
+              imageUrl: "/education/cbit.png"
             }
           ]
         }

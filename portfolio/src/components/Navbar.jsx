@@ -45,7 +45,7 @@ const Navbar = () => {
             {/* Logo and Brand */}
             <div className="flex items-center">
               <img 
-                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/5c57ed43-384d-4353-9118-29cad8a3dc9c/d075d826c58328f5561b91f4e67e2276.png" 
+                src="/sahith.png" 
                 alt="Sahith Rao Logo" 
                 className="h-8 object-contain"
               />
