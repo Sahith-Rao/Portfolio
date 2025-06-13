@@ -65,7 +65,7 @@ With a strong foundation in both frontend and backend development, I strive to b
       {/* Hero Section */}
       <div className="relative h-[40vh] sm:h-[50vh] w-full bg-gradient-to-r from-red-900 to-black flex flex-col items-center justify-center">
         <img 
-          src="/photo1.png" 
+          src="/photo2.png" 
           alt="Sahith Rao" 
           className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-red-500 shadow-lg mb-4" 
         />
