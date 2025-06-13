@@ -28,7 +28,7 @@ const Navbar = () => {
 
   const navLinks = [
     { to: '/', label: 'Home' },
-    ...(isRecruiter ? [{ to: '/browse/recruiter/projects', label: 'Projects' }] : []),
+    { to: '/browse/recruiter/projects', label: 'Projects' },
     { to: '/skills', label: 'Skills' },
     { to: '/contact', label: 'Contact' },
   ];
