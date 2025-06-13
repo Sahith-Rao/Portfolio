@@ -63,7 +63,12 @@ With a strong foundation in both frontend and backend development, I strive to b
       className="min-h-screen bg-black text-white"
     >
       {/* Hero Section */}
-      <div className="relative h-[40vh] sm:h-[50vh] w-full bg-gradient-to-r from-red-900 to-black flex items-center justify-center">
+      <div className="relative h-[40vh] sm:h-[50vh] w-full bg-gradient-to-r from-red-900 to-black flex flex-col items-center justify-center">
+        <img 
+          src="/photo1.png" 
+          alt="Sahith Rao" 
+          className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-red-500 shadow-lg mb-4" 
+        />
         <div className="text-center px-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">
             {aboutContent.title}
