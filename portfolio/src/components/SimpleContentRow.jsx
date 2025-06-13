@@ -190,58 +190,58 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
           // Render skills
           items.flatMap((category, categoryIndex) =>
             category.skills.map((skill, skillIndex) => {
-              const isHovered = hoveredIndex === `${categoryIndex}-${skillIndex}`;
-              return (
+                  const isHovered = hoveredIndex === `${categoryIndex}-${skillIndex}`;
+                  return (
                 <div key={`${categoryIndex}-${skillIndex}`} className="flex flex-col items-center">
-                  <motion.div
-                    onHoverStart={() => setHoveredIndex(`${categoryIndex}-${skillIndex}`)}
-                    onHoverEnd={() => setHoveredIndex(null)}
-                    animate={{
-                      scale: isHovered ? 1.04 : 1,
-                      zIndex: isHovered ? 20 : 1,
-                      transition: { 
-                        duration: 0.3,
-                        ease: [0.32, 0.72, 0, 1]
-                      }
-                    }}
-                    className="relative w-[200px] h-[200px] rounded-lg overflow-hidden cursor-pointer flex-shrink-0 bg-[#181818]"
-                  >
-                    {/* Background Image/Logo */}
                     <motion.div
-                      className="w-full h-full flex items-center justify-center"
+                      onHoverStart={() => setHoveredIndex(`${categoryIndex}-${skillIndex}`)}
+                      onHoverEnd={() => setHoveredIndex(null)}
                       animate={{
-                        scale: isHovered ? 1.02 : 1,
-                        transition: { duration: 0.3 }
+                      scale: isHovered ? 1.04 : 1,
+                        zIndex: isHovered ? 20 : 1,
+                        transition: { 
+                          duration: 0.3,
+                          ease: [0.32, 0.72, 0, 1]
+                        }
                       }}
+                      className="relative w-[200px] h-[200px] rounded-lg overflow-hidden cursor-pointer flex-shrink-0 bg-[#181818]"
                     >
-                      <img
-                        src={skill.logo}
-                        alt={`${skill.name} Logo`}
+                      {/* Background Image/Logo */}
+                      <motion.div
+                      className="w-full h-full flex items-center justify-center"
+                        animate={{
+                        scale: isHovered ? 1.02 : 1,
+                          transition: { duration: 0.3 }
+                        }}
+                      >
+                        <img
+                          src={skill.logo}
+                          alt={`${skill.name} Logo`}
                         className="w-full h-full object-cover"
-                      />
+                        />
+                      </motion.div>
+                      {/* Hover Overlay */}
+                      <AnimatePresence>
+                        {isHovered && (
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex flex-col justify-end"
+                          >
+                            <div>
+                              <h3 className="text-base font-semibold text-white mb-1">{skill.name}</h3>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </motion.div>
-                    {/* Hover Overlay */}
-                    <AnimatePresence>
-                      {isHovered && (
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex flex-col justify-end"
-                        >
-                          <div>
-                            <h3 className="text-base font-semibold text-white mb-1">{skill.name}</h3>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
                   {/* Skill Name Below Card */}
                   <span className="text-base font-semibold text-white text-center mt-2 drop-shadow-lg">
                     {skill.name}
                   </span>
-                </div>
+            </div>
               );
             })
           )

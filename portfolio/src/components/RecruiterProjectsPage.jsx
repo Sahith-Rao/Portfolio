@@ -57,46 +57,46 @@ const RecruiterProjectsPage = () => {
             onClick={() => setSelectedProject(project)}
           >
             <div className="w-full h-40 relative">
-              <img
+          <img
                 src={project.imageUrl}
                 alt={project.title}
                 className="w-full h-full object-cover object-center"
                 draggable={false}
               />
-            </div>
+        </div>
             <div className="p-4">
               <h2 className="text-xl font-bold mb-2 text-white">{project.title}</h2>
               <p className="text-xs text-gray-300 mb-2 line-clamp-2">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">{project.domain}</span>
                 <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">{project.period}</span>
-              </div>
-            </div>
           </div>
+        </div>
+      </div>
         ))}
         {/* Modal for long version */}
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
             <div className="relative bg-zinc-900 rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-y-auto max-h-[90vh] flex flex-col">
-              <button
+            <button
                 className="absolute top-4 right-4 text-white bg-black/70 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/90 transition-colors z-10 border-2 border-white/20"
                 onClick={() => setSelectedProject(null)}
-              >
+            >
                 <span className="text-2xl font-bold">×</span>
-              </button>
+            </button>
               <img
                 src={selectedProject.imageUrl}
                 alt={selectedProject.title}
                 className="w-full h-48 object-cover object-center rounded-t-2xl"
-                draggable={false}
-              />
+                  draggable={false}
+                />
               <div className="flex-1 flex flex-col justify-between p-6 gap-4">
                 <h2 className="text-2xl font-bold mb-2 text-white">{selectedProject.title}</h2>
                 <div className="flex flex-wrap gap-2 mb-2">
                   <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">{selectedProject.domain}</span>
                   <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">{selectedProject.techStack}</span>
                   <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">{selectedProject.period}</span>
-                </div>
+              </div>
                 <div className="flex gap-3 mt-2 mb-2">
                   {selectedProject.link && (
                     <a

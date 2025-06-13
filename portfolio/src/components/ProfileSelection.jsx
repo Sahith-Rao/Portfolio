@@ -14,18 +14,6 @@ const profiles = [
       projects: 'VHTOP - Hostel Management Suite, Sarah - AI Virtual Assistant',
       skills: 'Python, Java, JavaScript, NextJS, Machine Learning'
     }
-  },
-  {
-    id: 'developer',
-    name: 'Developer',
-    color: 'bg-blue-600',  // Fallback color
-    avatar: '/avatars/avatar2.png',
-    content: {
-      education: 'Vellore Institute of Technology, Chennai - Integrated MTech in Software Engineering',
-      experience: 'Full Stack Developer, AI/ML Engineer',
-      projects: 'Portfolio Website, AI Projects, Web Applications',
-      skills: 'React, Node.js, Python, Machine Learning, Cloud Computing'
-    }
   }
 ];
 

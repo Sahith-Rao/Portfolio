@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import SplashScreen from '@/components/SplashScreen';
 import ProfileSelection from '@/components/ProfileSelection';
@@ -65,6 +65,7 @@ function AppContent() {
   const [showSplash, setShowSplash] = useState(false);
   const [selectedProfile, setSelectedProfile] = useState(null);
   const audioContextResumed = useRef(false);
+  const location = useLocation();
 
   // Function to handle the initial "Enter" click
   const handleEnter = async () => {
@@ -104,7 +105,7 @@ function AppContent() {
 
   return (
     <>
-      <Navbar />
+      {location.pathname !== '/' && <Navbar />}
       <AnimatePresence mode="wait">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
