@@ -8,11 +8,11 @@ const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = {
-    email: "srivallabhkakarala@gmail.com",
-    linkedin: "linkedin.com/in/sahith-rao/",
-    github: "github.com/sahithrao",
-    location: "Chennai, India",
-    phone: "+91 9381704258" // Replace with your actual phone number
+    email: "sahithraolingampally@gmail.com",
+    linkedin: "www.linkedin.com/in/sahith-rao-lingampally-b2158a320",
+    github: "github.com/Sahith-Rao",
+    location: "Hyderabad, India",
+    phone: "+91 8008892225" 
   };
 
   const onSubmit = async (e) => {
