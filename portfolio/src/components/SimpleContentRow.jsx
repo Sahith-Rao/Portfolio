@@ -307,11 +307,17 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
                             {item.description}
                           </p>
                         )}
-                        {item.techStack && (
-                          <p className="text-xs font-medium text-red-400 truncate">
-                            {item.techStack}
-                          </p>
-                        )}
+                        <div className="flex flex-wrap gap-2 mb-2">
+                          {item.domain && (
+                            <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">{item.domain}</span>
+                          )}
+                          {item.techStack && (
+                            <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">{item.techStack}</span>
+                          )}
+                          {item.period && (
+                            <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">{item.period}</span>
+                          )}
+                        </div>
                       </div>
 
                       {/* Action Buttons */}

@@ -48,6 +48,13 @@ const RecruiterProjectsPage = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-black text-white"
     >
+      {/* Hero Banner */}
+      <div className="relative h-[30vh] sm:h-[40vh] md:h-[50vh] w-full bg-gradient-to-r from-red-900 to-black flex items-center justify-center">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-lg text-center px-2">
+          My Projects
+        </h1>
+      </div>
+
       {/* Mobile: Compact cards */}
       <div className="flex flex-col gap-6 py-8 px-2 sm:hidden">
         {projects.map((project, idx) => (

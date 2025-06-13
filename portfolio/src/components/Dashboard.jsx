@@ -30,7 +30,7 @@ const Dashboard = () => {
         subtitle: "Chaitanya Bharathi Institute of Technology, Hyderabad",
         period: "2022 - 2027",
         description: "Computer Science and Engineering student specializing in full-stack development and AI/ML solutions",
-        imageUrl: "/photo1.jpg",
+        imageUrl: "/photo1.png",
         contact: {
           email: "sahithraolingampally@gmail.com",
           linkedin: "www.linkedin.com/in/sahith-rao-lingampally-b2158a320/",
@@ -83,14 +83,16 @@ const Dashboard = () => {
               subtitle: "Agriculture Domain Research - IIIT Sri City",
               period: "June 2025 - July 2025",
               description: "Classification of spongy tissue disorder in mangoes using deep learning.",
-              imageUrl: "/experience/iiit.png"
+              imageUrl: "/experience/iiit.png",
+              domain: "Deep Learning"
             },
             {
               title: "Freelance Web Developer",
               subtitle: "Metic Synergy Website",
-              period: "Dec. 2024 - Apr. 2025",
+              period: "Feb. 2024 - Apr. 2025",
               description: "Developed interactive corporate website with CMS and SEO improvements.",
-              imageUrl: "/experience/freelance.png"
+              imageUrl: "/experience/freelance.png",
+              domain: "Full Stack"
             }
           ]
         },
@@ -251,7 +253,7 @@ const Dashboard = () => {
           alt="Banner background" 
           className="absolute inset-0 h-full w-full object-cover object-right md:object-[85%_center]" 
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         
         <div className="absolute bottom-[10%] md:bottom-[15%] left-[4%] md:left-[5%] max-w-xl lg:max-w-2xl z-10">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4 drop-shadow-lg">

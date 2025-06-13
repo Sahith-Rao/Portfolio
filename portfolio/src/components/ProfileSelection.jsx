@@ -53,7 +53,7 @@ const ProfileSelection = ({ onProfileSelect }) => {
       exit={{ opacity: 0 }}
       className="flex min-h-screen flex-col items-center bg-[#121212] p-4 sm:p-8"
     >
-      <h1 className="mt-[30px] mb-10 text-center text-3xl sm:text-4xl md:text-[48px] font-light text-white font-sans">
+      <h1 className="mt-[100px] mb-10 text-center text-3xl sm:text-4xl md:text-[48px] font-light text-white font-sans">
         Who's Watching?
       </h1>
 

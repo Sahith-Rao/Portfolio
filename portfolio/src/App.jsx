@@ -11,6 +11,7 @@ const Dashboard = lazy(() => import('@/components/Dashboard'));
 const SkillsPage = lazy(() => import('@/components/SkillsPage'));
 const ContactPage = lazy(() => import('@/components/ContactPage'));
 const RecruiterProjectsPage = lazy(() => import('@/components/RecruiterProjectsPage'));
+const AboutPage = lazy(() => import('@/components/AboutPage'));
 
 // Loading component for route transitions
 const LoadingSpinner = () => (
@@ -140,6 +141,14 @@ function AppContent() {
               element={
                 <ProtectedRoute profile={selectedProfile}>
                   <ContactPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <ProtectedRoute profile={selectedProfile}>
+                  <AboutPage />
                 </ProtectedRoute>
               }
             />
