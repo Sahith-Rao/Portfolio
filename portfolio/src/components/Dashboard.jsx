@@ -103,8 +103,8 @@ const Dashboard = () => {
               skills: [
                 { name: "Python", logo: "/skills/python.jpeg" },
                 { name: "Java", logo: "/skills/java.png" },
-                { name: "SQL", logo: "/skills/sql.jpeg" },
-                { name: "Git", logo: "/skills/git.png" }
+                { name: "Git", logo: "/skills/git.png" },
+                { name: "SQL", logo: "/skills/sql.jpeg" }
               ]
             },
             {
@@ -124,7 +124,6 @@ const Dashboard = () => {
               title: "Machine Learning Frameworks",
               skills: [
                 { name: "Numpy", logo: "/skills/Numpy.png" },
-                { name: "Pandas", logo: "/skills/pandas.png" },
                 { name: "Scikit-learn", logo: "/skills/scikit learn.png" },
                 { name: "Matplotlib", logo: "/skills/matplotlib.png" }
               ]
@@ -132,20 +131,10 @@ const Dashboard = () => {
             {
               title: "Cloud Technologies",
               skills: [
-                { name: "Azure Cloud", logo: "/skills/azure.png" },
-                { name: "Google Cloud Platform", logo: "/skills/gcp.png" },
-                { name: "AWS", logo: "/skills/aws.png" }
-              ]
-            },
-            {
-              title: "Other Technologies",
-              skills: [
-                { name: "Linux", logo: "/skills/linux.jpeg" },
-                { name: "Android", logo: "/skills/android.png" },
-                { name: "Notion", logo: "/skills/notion.png" },
-                { name: "Docker", logo: "/skills/docker.png" }
+                { name: "Azure Cloud", logo: "/skills/azure.png" }
               ]
             }
+
           ]
         },
         {

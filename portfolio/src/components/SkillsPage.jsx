@@ -13,48 +13,29 @@ const skillsData = {
   "Languages": [
     { name: "Python", logo: "/skills/python.jpeg" },
     { name: "Java", logo: "/skills/java.png" },
-    { name: "C/C++", logo: "/skills/c++.png" },
     { name: "JavaScript", logo: "/skills/javascript.png" },
-    { name: "SQL", logo: "/skills/sql.jpeg" },,
-    { name: "Bash", logo: "/skills/bash.png" },
     { name: "Git", logo: "/skills/git.png" },
+    { name: "SQL", logo: "/skills/sql.jpeg" }
   ],
   "Web Development Frameworks": [
-    { name: "Flask", logo: "/skills/flask.png" },
     { name: "HTML", logo: "/skills/html.png" },
     { name: "CSS", logo: "/skills/css.png" },
-    { name: "PHP", logo: "/skills/php.png" },
+    { name: "Flask", logo: "/skills/flask.png" },
     { name: "ReactJS", logo: "/skills/reactjs.jpeg" },
-    { name: "NextJS", logo: "/skills/nextjs.png" },
+    { name: "NodeJS", logo: "/skills/nodejs.png" },
+    { name: "ExpressJS", logo: "/skills/expressjs.png" },
   ],
   "Machine Learning Frameworks": [
     { name: "Numpy", logo: "/skills/Numpy.png" },
-    { name: "Pandas", logo: "/skills/pandas.png" },
     { name: "Scikit-learn", logo: "/skills/scikit learn.png" },
     { name: "Matplotlib", logo: "/skills/matplotlib.png" },
   ],
   "Databases": [
-    { name: "DynamoDB", logo: "/skills/dynamodb.png" },
-    { name: "Aurora", logo: "/skills/aurora.jpeg" },
-    { name: "SQLite", logo: "/skills/sqlite.png" },
     { name: "MySQL", logo: "/skills/mysql.png" },
-    { name: "Firestore", logo: "/skills/firestore.jpeg" },
+    { name: "MongoDB", logo: "/skills/mongodb.png" }
   ],
   "Cloud Technologies": [
-    { name: "Firebase", logo: "/skills/firebase.png" },
-    { name: "Google Cloud Platform", logo: "/skills/gcp.png" },
-    { name: "AWS", logo: "/skills/aws.png" },
-  ],
-  "Design Suite": [
-    { name: "Figma", logo: "/skills/figma.png" },
-    { name: "AdobeXD", logo: "/skills/adobexd.jpeg" },
-  ],
-  "Other Technologies": [
-    { name: "Linux", logo: "/skills/linux.jpeg" },
-    { name: "Android", logo: "/skills/android.png" },
-    { name: "Notion", logo: "/skills/notion.png" },
-    { name: "Docker", logo: "/skills/docker.png" },
-  
+    { name: "Azure", logo: "/skills/azure.png" }
   ],
 };
 
