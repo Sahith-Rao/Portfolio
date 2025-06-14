@@ -291,64 +291,9 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex flex-col justify-end"
+                      className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex flex-col justify-center items-center"
                     >
-                      <div>
-                        <h3 className="text-base font-semibold text-white mb-1">{item.title}</h3>
-                        {(item.subtitle || item.period) && (
-                          <div className="flex items-center text-xs text-white/90 mb-1">
-                            {item.subtitle && <span>{item.subtitle}</span>}
-                            {item.subtitle && item.period && <span className="mx-1">•</span>}
-                            {item.period && <span>{item.period}</span>}
-                          </div>
-                        )}
-                        {item.description && (
-                          <p className="text-xs text-white/90 mb-2 max-h-[70px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent pr-1">
-                            {item.description}
-                          </p>
-                        )}
-                        <div className="flex flex-wrap gap-2 mb-2">
-                          {item.domain && (
-                            <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">{item.domain}</span>
-                          )}
-                          {item.techStack && (
-                            <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">{item.techStack}</span>
-                          )}
-                          {item.period && (
-                            <span className="bg-white/10 text-white text-xs font-bold px-2 py-1 rounded">{item.period}</span>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Action Buttons */}
-                      <div className="absolute top-2 right-2 flex gap-2">
-                        {item.github && (
-                          <motion.a
-                            href={item.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-1.5 rounded-full bg-black/70 backdrop-blur-sm hover:bg-white/20 transition-colors"
-                            onClick={(e) => e.stopPropagation()}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <Github size={16} className="text-white" />
-                          </motion.a>
-                        )}
-                        {item.link && (
-                          <motion.a
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-1.5 rounded-full bg-black/70 backdrop-blur-sm hover:bg-white/20 transition-colors"
-                            onClick={(e) => e.stopPropagation()}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <ExternalLink size={16} className="text-white" />
-                          </motion.a>
-                        )}
-                      </div>
+                      <p className="text-white text-lg font-semibold">Click to know more</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

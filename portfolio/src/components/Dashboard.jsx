@@ -44,7 +44,7 @@ const Dashboard = () => {
             {
               title: "BlogSpace",
               period: "2024",
-              description: "Educational platform for Telangana State Board students with interactive quizzes and map exercises.",
+              description: "A full-stack blog platform where users can register, log in, create, search, and manage blog posts with authentication using JWT and MongoDB.",
               longDescription: "BlogSpace is a full-stack blogging platform built using the MERN stack (MongoDB, Express.js, React, and Node.js), designed to offer users a secure and dynamic space to create, browse, and interact with blog posts. Users can register, log in, create and edit posts, and view their own content. The platform allows users to engage with blog content by posting comments under each article. Additionally, it integrates Cloudinary for efficient and scalable image handling—enabling users to upload and store post images securely in the cloud, with fast delivery and optimization. With a responsive UI design and real-time search functionality for filtering posts by title, BlogSpace ensures a seamless and user-friendly experience across devices.",
               techStack: "React, Node.js, Material UI, MongoDB, Express.js",
               imageUrl: "/projects/blogspace.png",
@@ -55,7 +55,7 @@ const Dashboard = () => {
             {
               title: "Metic Synergy Website",
               period: "2025",
-              description: "Responsive corporate website using React, Node.js, and Tailwind CSS.",
+              description: "A full-stack web application for Metic Synergy that offers client-side rendered service pages, booking, surveys, and admin management, built using React, Express.js, and MongoDB.",
               longDescription: "Metic Synergy is a full-stack web application built using React (with Vite), Express.js, and MongoDB, designed to showcase services, handle client interactions, and provide administrative insights. The platform includes an appointment booking feature that allows users to schedule services, and a client survey form to collect feedback. Once logged in, admins can access a protected dashboard where all booking requests and survey responses are displayed. Survey data is visualized using interactive bar and pie charts, enabling admins to analyze user sentiment and service performance effectively. ",
               techStack: "Node.js, React JS, Tailwind CSS, MongoDB, Express.js",
               imageUrl: "/projects/logo.png",
