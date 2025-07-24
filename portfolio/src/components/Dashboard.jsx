@@ -28,7 +28,7 @@ const Dashboard = () => {
       banner: {
         title: "Sahith Rao",
         subtitle: "Chaitanya Bharathi Institute of Technology, Hyderabad",
-        period: "2022 - 2027",
+        period: "2022 - 2026",
         description: "Computer Science and Engineering student specializing in full-stack development and AI/ML solutions",
         imageUrl: "/photo1.png",
         contact: {
@@ -41,17 +41,19 @@ const Dashboard = () => {
         {
           title: "Projects",
           items: [
+            
             {
-              title: "BlogSpace",
-              period: "2024",
-              description: "A full-stack blog platform where users can register, log in, create, search, and manage blog posts with authentication using JWT and MongoDB.",
-              longDescription: "BlogSpace is a full-stack blogging platform built using the MERN stack (MongoDB, Express.js, React, and Node.js), designed to offer users a secure and dynamic space to create, browse, and interact with blog posts. Users can register, log in, create and edit posts, and view their own content. The platform allows users to engage with blog content by posting comments under each article. Additionally, it integrates Cloudinary for efficient and scalable image handling—enabling users to upload and store post images securely in the cloud, with fast delivery and optimization. With a responsive UI design and real-time search functionality for filtering posts by title, BlogSpace ensures a seamless and user-friendly experience across devices.",
-              techStack: "React, Node.js, Material UI, MongoDB, Express.js",
-              imageUrl: "/projects/blogspace.png",
-              link: "https://blogspace-bay.vercel.app/",
-              github: "https://github.com/Sahith-Rao/blog-space.git",
-              domain: "Web Development"
+              title: "Syncruit - AI-Powered Recruitment Platform",
+              period: "2025",
+              description: "An AI-driven recruitment platform streamlining hiring with resume analysis, interview feedback, and analytics using Next.js, Express, MongoDB, and Google Gemini.",
+              longDescription: "Syncruit is a comprehensive full-stack recruitment platform built with Next.js (frontend), Express.js (backend), and MongoDB (database). It enables employers to create jobs, track applications, analyze resumes using NLP, and evaluate candidate video interviews with AI-driven feedback. Candidates can manage their profiles, take mock interviews, and receive insightful feedback on both content and delivery. The interview process uses Google Generative AI (Gemini) for content scoring, and Python-based audio-visual analysis for delivery metrics like eye contact, confidence, and speech clarity. The application also uses Cloudinary for video uploads and provides both employers and job seekers with a seamless experience from job posting to final hiring decision.",
+              techStack: "Next.js, Node.js, Express.js, AI, Python, MongoDB",
+              imageUrl: "/projects/syncruit2.png",
+              link: "https://syncruit.yourdomain.com", 
+              github: "https://github.com/Sahith-Rao/project-k.git", 
+              domain: "Web Development, AI/ML"
             },
+
             {
               title: "Metic Synergy Website",
               period: "2025",
@@ -63,6 +65,31 @@ const Dashboard = () => {
               github: "https://github.com/sreevallabh04/Metic-Synergy.git",
               domain: "Web Development"
             },
+
+            {
+              title: "Bank Complaint Classifier",
+              period: "2025",
+              description: "A Django-based web app that uses NLP to auto-classify user-submitted bank complaints into predefined categories using a Hugging Face-powered API.",
+              longDescription: "Bank Complaint Classifier is a full-stack web application built with Django and integrated with a Hugging Face Spaces NLP model. It allows users to register, log in, and submit banking-related complaints. Upon submission, the system automatically classifies each complaint into one of several categories (e.g., Credit Card, Retail Banking, Debt Collection) using a pre-trained transformer model. Users can view their past complaints, while admins (bank managers) can monitor and filter all submitted complaints by category. The platform ensures secure user authentication, clean UI using Bootstrap, and real-time API interaction for text classification.",
+              techStack: "Django, Python, Hugging Face, Bootstrap, PostgreSQL",
+              imageUrl: "/projects/bank.png", 
+              link: "https://complaint-classifier-django.onrender.com", 
+              github: "https://github.com/Sahith-Rao/complaint-classifier-django.git", 
+              domain: "Web Development, NLP"
+            },
+
+            {
+              title: "BlogSpace",
+              period: "2024",
+              description: "A full-stack blog platform where users can register, log in, create, search, and manage blog posts with authentication using JWT and MongoDB.",
+              longDescription: "BlogSpace is a full-stack blogging platform built using the MERN stack (MongoDB, Express.js, React, and Node.js), designed to offer users a secure and dynamic space to create, browse, and interact with blog posts. Users can register, log in, create and edit posts, and view their own content. The platform allows users to engage with blog content by posting comments under each article. Additionally, it integrates Cloudinary for efficient and scalable image handling—enabling users to upload and store post images securely in the cloud, with fast delivery and optimization. With a responsive UI design and real-time search functionality for filtering posts by title, BlogSpace ensures a seamless and user-friendly experience across devices.",
+              techStack: "React, Node.js, Material UI, MongoDB, Express.js",
+              imageUrl: "/projects/blogspace.png",
+              link: "https://blogspace-bay.vercel.app/",
+              github: "https://github.com/Sahith-Rao/blog-space.git",
+              domain: "Web Development"
+            },
+
             {
               title: "Face Emotion Detector",
               period: "2024",
@@ -78,22 +105,25 @@ const Dashboard = () => {
         {
           title: "Professional Experience",
           items: [
+
+            {
+              title: "Web Development Intern",
+              subtitle: "Syncall Technologies",
+              period: "June 2024 - July 2024",
+              description: "Collaborated with a cross-functional team to build a web-based employee management system that allowed admins to upload and access employee records. Participated in sprint planning, code reviews, and debugging in an agile setup, contributing to timely feature delivery and integration across modules.",
+              imageUrl: "/experience/syncall.png",
+              domain: "Web Development"
+            },
+
             {
               title: "Research Intern",
-              subtitle: "Agriculture Domain Research - IIIT Sri City",
+              subtitle: "Active Learning - IIIT Sri City",
               period: "June 2025 - July 2025",
-              description: "Classification of spongy tissue disorder in mangoes using deep learning.",
+              description: "Implemented an active learning pipeline for classifying bank customer complaints into predefined categories using NLP and uncertainty sampling. Designed and evaluated query strategies like margin sampling to minimize labeling effort while maintaining high model accuracy. Integrated TF-IDF and chi-square-based feature selection with Random Forests inside an iterative learning loop to simulate real-world deployment constraints.",
               imageUrl: "/experience/iiit.png",
-              domain: "Deep Learning"
-            },
-            {
-              title: "Freelance Web Developer",
-              subtitle: "Metic Synergy Website",
-              period: "Feb. 2024 - Apr. 2025",
-              description: "Developed interactive corporate website with CMS and SEO improvements.",
-              imageUrl: "/experience/freelance.png",
-              domain: "Full Stack"
+              domain: "Machine Learning"
             }
+            
           ]
         },
         {
@@ -105,7 +135,6 @@ const Dashboard = () => {
               skills: [
                 { name: "Python", logo: "/skills/python.jpeg" },
                 { name: "Java", logo: "/skills/java.png" },
-                { name: "Git", logo: "/skills/git.png" },
                 { name: "SQL", logo: "/skills/sql.jpeg" }
               ]
             },
@@ -115,11 +144,13 @@ const Dashboard = () => {
                 { name: "HTML", logo: "/skills/html.png" },
                 { name: "CSS", logo: "/skills/css.png" },
                 { name: "JavaScript", logo: "/skills/javascript.png" },
+                { name: "Django", logo: "/skills/django.png" },
                 { name: "ReactJS", logo: "/skills/reactjs.jpeg" },
-                { name: "Flask", logo: "/skills/flask.png" },
+                { name: "NextJS", logo: "/skills/nextjs.png" },
                 { name: "Node.js", logo: "/skills/nodejs.png" },
                 { name: "ExpressJS", logo: "/skills/expressjs.png" },
                 { name: "MongoDB", logo: "/skills/mongodb.png" },
+                { name: "Git", logo: "/skills/git.png" }
               ]
             },
             {

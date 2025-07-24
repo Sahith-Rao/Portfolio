@@ -22,6 +22,9 @@ const ProjectModal = ({ project, onClose }) => {
   const badge = project.badge || '#1 in Projects Today';
   const quote = project.quote || "This is a sample project quote or tagline.";
 
+  // Determine if this is a Professional Experience modal
+  const isProfessionalExperience = (project.domain === 'Web Development' || project.domain === 'Machine Learning' || project.domain === 'Professional Experience');
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -82,19 +85,22 @@ const ProjectModal = ({ project, onClose }) => {
               {description}
             </div>
           </div>
-          {/* Right: Domain, Tech stack, Year */}
+          {/* Right: Domain, Tech stack, Year/Period */}
           <div className="flex-1 min-w-[220px] flex flex-col gap-2">
             <div className="mb-1">
               <span className="text-white font-semibold">Domain: </span>
               <span className="text-white/80">{domain}</span>
             </div>
+            {/* Only show tech stack if not Professional Experience */}
+            {!isProfessionalExperience && (
+              <div className="mb-1">
+                <span className="text-white font-semibold">Tech Stack: </span>
+                <span className="text-red-400">{techStack}</span>
+              </div>
+            )}
             <div className="mb-1">
-              <span className="text-white font-semibold">Tech Stack: </span>
-              <span className="text-red-400">{techStack}</span>
-            </div>
-            <div className="mb-1">
-              <span className="text-white font-semibold">Year: </span>
-              <span className="text-white/80">{year}</span>
+              <span className="text-white font-semibold">{isProfessionalExperience ? 'Period' : 'Year'}: </span>
+              <span className="text-white/80">{project.period || year}</span>
             </div>
           </div>
         </div>
@@ -117,6 +123,10 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
 
   const handleCardClick = (item, e) => {
     if (e.target.closest('button') || e.target.closest('a')) {
+      return;
+    }
+    // Prevent modal for Education & Coursework
+    if (title === 'Education & Coursework') {
       return;
     }
     // If it's a project (not a skill), open modal
@@ -285,7 +295,7 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
 
                 {/* Hover Overlay */}
                 <AnimatePresence>
-                  {isHovered && (
+                  {isHovered && title !== 'Education & Coursework' && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}

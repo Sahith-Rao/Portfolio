@@ -4,17 +4,19 @@ import { ExternalLink, Github, ChevronRight, ChevronLeft } from 'lucide-react';
 
 // Projects data from Dashboard recruiter section
 const projects = [
+
   {
-    title: "BlogSpace",
-    period: "2024",
-    description: "Educational platform for Telangana State Board students with interactive quizzes and map exercises.",
-    longDescription: "BlogSpace is a full-stack blogging platform built using the MERN stack (MongoDB, Express.js, React, and Node.js), designed to offer users a secure and dynamic space to create, browse, and interact with blog posts. Users can register, log in, create and edit posts, and view their own content. The platform allows users to engage with blog content by posting comments under each article. Additionally, it integrates Cloudinary for efficient and scalable image handling—enabling users to upload and store post images securely in the cloud, with fast delivery and optimization. With a responsive UI design and real-time search functionality for filtering posts by title, BlogSpace ensures a seamless and user-friendly experience across devices.",
-    techStack: "React, Node.js, Material UI, MongoDB, Express.js",
-    imageUrl: "/projects/blogspace.png",
-    link: "https://blogspace-bay.vercel.app/",
-    github: "https://github.com/Sahith-Rao/blog-space.git",
-    domain: "Web Development"
+    title: "Syncruit",
+    period: "2025",
+    description: "AI-powered recruitment platform with resume analysis and interview evaluation.",
+    longDescription: "Syncruit is a full-stack AI-powered recruitment platform built using Next.js, Express.js, and MongoDB. It streamlines the hiring process for both employers and job seekers by offering intelligent job posting, resume analysis using NLP, and automated interview evaluations. Employers can manage job listings, track applications, and receive candidate insights via an analytics dashboard. Job seekers benefit from mock interviews, skill development feedback, and real-time application tracking. The interview scoring combines Google Generative AI for content evaluation and custom Python scripts for analyzing delivery metrics like confidence, eye contact, and speech clarity. Cloudinary is used for video uploads, and the platform supports asynchronous interviews using the MediaRecorder API and real-time speech transcription.",
+    techStack: "Next.js, Node.js, Express.js, MongoDB, Python, AI",
+    imageUrl: "/projects/syncruit2.png",
+    link: "https://yourdeploymenturl.com",
+    github: "https://github.com/Sahith-Rao/project-k.git", 
+    domain: "Web Development, AI/ML"
   },
+
   {
     title: "Metic Synergy Website",
     period: "2025",
@@ -26,6 +28,31 @@ const projects = [
     github: "https://github.com/sreevallabh04/Metic-Synergy.git",
     domain: "Web Development"
   },
+
+  {
+  title: "Bank Complaint Classifier",
+  period: "2025",
+  description: "Complaint classification system using Django and Hugging Face Spaces.",
+  longDescription: "This is a full-stack web application that allows users to file consumer complaints and get them automatically classified into categories such as credit card, retail banking, credit reporting, etc. The frontend is built using Django templates with Bootstrap, while the backend is powered by Django and integrated with a Hugging Face Space for category prediction. The platform supports user registration, authentication, and complaint history. Admins can access a secure dashboard to view complaints by category and date. Classification is powered by an NLP model deployed on Hugging Face Spaces and invoked via an API. Cloud deployment and category-based filtering make it scalable and user-friendly.",
+  techStack: "Django, Python, Hugging Face, Bootstrap, HTML, CSS, PostgreSQL",
+  imageUrl: "/projects/bank.png",
+  link: "https://complaint-classifier-django.onrender.com",  
+  github: "https://github.com/Sahith-Rao/complaint-classifier-django.git",  
+  domain: "Web Development, NLP"
+  },
+
+  {
+    title: "BlogSpace",
+    period: "2024",
+    description: "Educational platform for Telangana State Board students with interactive quizzes and map exercises.",
+    longDescription: "BlogSpace is a full-stack blogging platform built using the MERN stack (MongoDB, Express.js, React, and Node.js), designed to offer users a secure and dynamic space to create, browse, and interact with blog posts. Users can register, log in, create and edit posts, and view their own content. The platform allows users to engage with blog content by posting comments under each article. Additionally, it integrates Cloudinary for efficient and scalable image handling—enabling users to upload and store post images securely in the cloud, with fast delivery and optimization. With a responsive UI design and real-time search functionality for filtering posts by title, BlogSpace ensures a seamless and user-friendly experience across devices.",
+    techStack: "React, Node.js, Material UI, MongoDB, Express.js",
+    imageUrl: "/projects/blogspace.png",
+    link: "https://blogspace-bay.vercel.app/",
+    github: "https://github.com/Sahith-Rao/blog-space.git",
+    domain: "Web Development"
+  },
+
   {
     title: "Face Emotion Detector",
     period: "2024",

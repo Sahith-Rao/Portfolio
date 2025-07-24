@@ -3,25 +3,24 @@ import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 
-// Updated skill data with normalized image paths
 const skillsData = {
   "Languages": [
     { name: "Python", logo: "/skills/python.jpeg" },
     { name: "Java", logo: "/skills/java.png" },
-    { name: "JavaScript", logo: "/skills/javascript.png" },
     { name: "Git", logo: "/skills/git.png" },
     { name: "SQL", logo: "/skills/sql.jpeg" }
   ],
   "Web Development Frameworks": [
     { name: "HTML", logo: "/skills/html.png" },
     { name: "CSS", logo: "/skills/css.png" },
-    { name: "Flask", logo: "/skills/flask.png" },
+    { name: "JavaScript", logo: "/skills/javascript.png" },
+    { name: "Django", logo: "/skills/django.png" },
     { name: "ReactJS", logo: "/skills/reactjs.jpeg" },
+    { name: "NextJS", logo: "/skills/nextjs.png"},
     { name: "NodeJS", logo: "/skills/nodejs.png" },
     { name: "ExpressJS", logo: "/skills/expressjs.png" },
   ],
@@ -31,7 +30,7 @@ const skillsData = {
     { name: "Matplotlib", logo: "/skills/matplotlib.png" },
   ],
   "Databases": [
-    { name: "MySQL", logo: "/skills/mysql.png" },
+    { name: "PostgreSQL", logo: "/skills/postgresql.png" },
     { name: "MongoDB", logo: "/skills/mongodb.png" }
   ],
   "Cloud Technologies": [
@@ -49,14 +48,12 @@ const SkillsPage = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-black text-white"
     >
-      {/* Hero Banner */}
       <div className="relative h-[30vh] sm:h-[40vh] md:h-[50vh] w-full bg-gradient-to-r from-red-900 to-black flex items-center justify-center">
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-lg text-center px-2 netflix-font">
           Skills Showcase
         </h1>
       </div>
 
-      {/* Netflix-style Skills Rows */}
       <div className="px-2 sm:px-[4%] py-6 sm:py-8">
         {Object.entries(skillsData).map(([category, skills]) => (
           <div key={category} className="mb-10">
