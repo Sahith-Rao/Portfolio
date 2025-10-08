@@ -10,7 +10,7 @@ const projects = [
     period: "2025",
     description: "AI-powered recruitment platform with resume analysis and interview evaluation.",
     longDescription: "Syncruit is a full-stack AI-powered recruitment platform built using Next.js, Express.js, and MongoDB. It streamlines the hiring process for both employers and job seekers by offering intelligent job posting, resume analysis using NLP, and automated interview evaluations. Employers can manage job listings, track applications, and receive candidate insights via an analytics dashboard. Job seekers benefit from mock interviews, skill development feedback, and real-time application tracking. The interview scoring combines Google Generative AI for content evaluation and custom Python scripts for analyzing delivery metrics like confidence, eye contact, and speech clarity. Cloudinary is used for video uploads, and the platform supports asynchronous interviews using the MediaRecorder API and real-time speech transcription.",
-    techStack: "Next.js, Node.js, Express.js, MongoDB, Python, AI",
+    techStack: "Next.js, Node.js, Express.js, MongoDB, Python, Gemini AI, Cloudinary",
     imageUrl: "/projects/syncruit2.png",
     link: "https://yourdeploymenturl.com",
     github: "https://github.com/Sahith-Rao/project-k.git", 
@@ -21,19 +21,19 @@ const projects = [
     title: "Metic Synergy Website",
     period: "2025",
     description: "Responsive corporate website using React, Node.js, and Tailwind CSS.",
-    longDescription: "Metic Synergy is a full-stack web application built using React (with Vite), Express.js, and MongoDB, designed to showcase services, handle client interactions, and provide administrative insights. The platform includes an appointment booking feature that allows users to schedule services, and a client survey form to collect feedback. Once logged in, admins can access a protected dashboard where all booking requests and survey responses are displayed. Survey data is visualized using interactive bar and pie charts, enabling admins to analyze user sentiment and service performance effectively. ",
-    techStack: "Node.js, React JS, Tailwind CSS, MongoDB, Express.js",
+    longDescription: "Designed and developed a responsive freelancing platform using the MERN stack, featuring survey and appointment booking modules with automated email confirmations. Integrated an admin dashboard with bar and pie chart analytics for visualizing survey insights and upcoming appointments. Implemented an AI-powered chatbot using a Retrieval-Augmented Generation (RAG) pipeline with Cohere LLM and Pinecone to handle company-specific queries and automatically escalate unresolved issues to the support team via email.",
+    techStack: "React JS, Node.js, Tailwind CSS, MongoDB, Express.js, Pinecone",
     imageUrl: "/projects/logo.png",
     link: "https://meticsynergy.com",
     github: "https://github.com/sreevallabh04/Metic-Synergy.git",
-    domain: "Web Development"
+    domain: "Web Development, RAG"
   },
 
   {
   title: "Bank Complaint Classifier",
   period: "2025",
   description: "Complaint classification system using Django and Hugging Face Spaces.",
-  longDescription: "This is a full-stack web application that allows users to file consumer complaints and get them automatically classified into categories such as credit card, retail banking, credit reporting, etc. The frontend is built using Django templates with Bootstrap, while the backend is powered by Django and integrated with a Hugging Face Space for category prediction. The platform supports user registration, authentication, and complaint history. Admins can access a secure dashboard to view complaints by category and date. Classification is powered by an NLP model deployed on Hugging Face Spaces and invoked via an API. Cloud deployment and category-based filtering make it scalable and user-friendly.",
+  longDescription: "Designed an Active Learning–driven machine learning workflow for bank customer complaint classification using TF-IDF feature extraction and Random Forest models in Scikit-learn, achieving competitive accuracy with only 27% of the labeled training data. Built a Django-based web application integrated with PostgreSQL for complaint submission and user authentication, and developed an interactive admin dashboard to visualize complaint statistics and category distributions.",
   techStack: "Django, Python, Hugging Face, Bootstrap, HTML, CSS, PostgreSQL",
   imageUrl: "/projects/bank.png",
   link: "https://complaint-classifier-django.onrender.com",  

@@ -11,7 +11,6 @@ const skillsData = {
   "Languages": [
     { name: "Python", logo: "/skills/python.jpeg" },
     { name: "Java", logo: "/skills/java.png" },
-    { name: "Git", logo: "/skills/git.png" },
     { name: "SQL", logo: "/skills/sql.jpeg" }
   ],
   "Web Development Frameworks": [
@@ -24,17 +23,15 @@ const skillsData = {
     { name: "NodeJS", logo: "/skills/nodejs.png" },
     { name: "ExpressJS", logo: "/skills/expressjs.png" },
   ],
-  "Machine Learning Frameworks": [
-    { name: "Numpy", logo: "/skills/Numpy.png" },
-    { name: "Scikit-learn", logo: "/skills/scikit learn.png" },
-    { name: "Matplotlib", logo: "/skills/matplotlib.png" },
+  "Developer Tools": [
+    { name: "Git", logo: "/skills/git.png" },
+    { name: "Github", logo: "/skills/github.png" },
+    { name: "Docker", logo: "/skills/docker.jpg" },
+    { name: "Azure Cloud", logo: "/skills/azure.png" }
   ],
   "Databases": [
     { name: "PostgreSQL", logo: "/skills/postgresql.png" },
     { name: "MongoDB", logo: "/skills/mongodb.png" }
-  ],
-  "Cloud Technologies": [
-    { name: "Azure", logo: "/skills/azure.png" }
   ],
 };
 

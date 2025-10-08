@@ -125,8 +125,8 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
     if (e.target.closest('button') || e.target.closest('a')) {
       return;
     }
-    // Prevent modal for Education & Coursework
-    if (title === 'Education & Coursework') {
+    // Prevent modal for Education & Coursework and Certifications
+    if (title === 'Education & Coursework' || title === 'Certifications') {
       return;
     }
     // If it's a project (not a skill), open modal
@@ -295,7 +295,7 @@ const SimpleContentRow = ({ title, items, isSkills }) => {
 
                 {/* Hover Overlay */}
                 <AnimatePresence>
-                  {isHovered && title !== 'Education & Coursework' && (
+                  {isHovered && title !== 'Education & Coursework' && title !== 'Certifications' && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}

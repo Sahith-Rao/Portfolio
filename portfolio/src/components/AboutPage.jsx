@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 const AboutPage = () => {
   const aboutContent = {
     title: "About Me",
-    subtitle: "Full Stack Developer & AI Enthusiast",
+    subtitle: "Full Stack Developer & AI/ML Enthusiast",
     description: `I'm a Computer Science student at Chaitanya Bharathi Institute of Technology, specializing in full-stack development and AI/ML solutions. My passion lies in creating innovative web applications and exploring the intersection of technology and user experience.
 
 With a strong foundation in both frontend and backend development, I strive to build applications that are not only technically robust but also provide an exceptional user experience. My journey in technology has led me to work on various projects, from web applications to machine learning solutions.`,
@@ -14,7 +14,7 @@ With a strong foundation in both frontend and backend development, I strive to b
       technical: [
         "Full Stack Development",
         "Machine Learning",
-        "Web Development",
+        "Natural Language Processing",
         "UI/UX Design",
         "Cloud Computing"
       ],

@@ -47,30 +47,30 @@ const Dashboard = () => {
               period: "2025",
               description: "An AI-driven recruitment platform streamlining hiring with resume analysis, interview feedback, and analytics using Next.js, Express, MongoDB, and Google Gemini.",
               longDescription: "Syncruit is a comprehensive full-stack recruitment platform built with Next.js (frontend), Express.js (backend), and MongoDB (database). It enables employers to create jobs, track applications, analyze resumes using NLP, and evaluate candidate video interviews with AI-driven feedback. Candidates can manage their profiles, take mock interviews, and receive insightful feedback on both content and delivery. The interview process uses Google Generative AI (Gemini) for content scoring, and Python-based audio-visual analysis for delivery metrics like eye contact, confidence, and speech clarity. The application also uses Cloudinary for video uploads and provides both employers and job seekers with a seamless experience from job posting to final hiring decision.",
-              techStack: "Next.js, Node.js, Express.js, AI, Python, MongoDB",
+              techStack: "Next.js, Node.js, Express.js, Gemini AI, Python, MongoDB, Cloudinary",
               imageUrl: "/projects/syncruit2.png",
-              link: "https://syncruit.yourdomain.com", 
+              link: "https://syncruit.vercel.app", 
               github: "https://github.com/Sahith-Rao/project-k.git", 
-              domain: "Web Development, AI/ML"
+              domain: "Full Stack, AI/ML"
             },
 
             {
               title: "Metic Synergy Website",
               period: "2025",
-              description: "A full-stack web application for Metic Synergy that offers client-side rendered service pages, booking, surveys, and admin management, built using React, Express.js, and MongoDB.",
-              longDescription: "Metic Synergy is a full-stack web application built using React (with Vite), Express.js, and MongoDB, designed to showcase services, handle client interactions, and provide administrative insights. The platform includes an appointment booking feature that allows users to schedule services, and a client survey form to collect feedback. Once logged in, admins can access a protected dashboard where all booking requests and survey responses are displayed. Survey data is visualized using interactive bar and pie charts, enabling admins to analyze user sentiment and service performance effectively. ",
-              techStack: "Node.js, React JS, Tailwind CSS, MongoDB, Express.js",
+              description: "Designed and developed a responsive freelancing platform using the MERN stack, featuring survey and appointment booking modules with automated email confirmations. Integrated an admin dashboard with bar and pie chart analytics for visualizing survey insights and upcoming appointments. Implemented an AI-powered chatbot using a Retrieval-Augmented Generation (RAG) pipeline with Cohere LLM and Pinecone to handle company-specific queries and automatically escalate unresolved issues to the support team via email.",
+              longDescription: "Designed and developed a responsive freelancing platform using the MERN stack, featuring survey and appointment booking modules with automated email confirmations. Integrated an admin dashboard with bar and pie chart analytics for visualizing survey insights and upcoming appointments. Implemented an AI-powered chatbot using a Retrieval-Augmented Generation (RAG) pipeline with Cohere LLM and Pinecone to handle company-specific queries and automatically escalate unresolved issues to the support team via email.",
+              techStack: "React JS, Tailwind CSS, Node.js, MongoDB, Express.js, Pinecone",
               imageUrl: "/projects/logo.png",
               link: "https://meticsynergy.com",
               github: "https://github.com/sreevallabh04/Metic-Synergy.git",
-              domain: "Web Development"
+              domain: "Web Development, RAG"
             },
 
             {
               title: "Bank Complaint Classifier",
               period: "2025",
               description: "A Django-based web app that uses NLP to auto-classify user-submitted bank complaints into predefined categories using a Hugging Face-powered API.",
-              longDescription: "Bank Complaint Classifier is a full-stack web application built with Django and integrated with a Hugging Face Spaces NLP model. It allows users to register, log in, and submit banking-related complaints. Upon submission, the system automatically classifies each complaint into one of several categories (e.g., Credit Card, Retail Banking, Debt Collection) using a pre-trained transformer model. Users can view their past complaints, while admins (bank managers) can monitor and filter all submitted complaints by category. The platform ensures secure user authentication, clean UI using Bootstrap, and real-time API interaction for text classification.",
+              longDescription: "Designed an Active Learning–driven machine learning workflow for bank customer complaint classification using TF-IDF feature extraction and Random Forest models in Scikit-learn, achieving competitive accuracy with only 27% of the labeled training data. Built a Django-based web application integrated with PostgreSQL for complaint submission and user authentication, and developed an interactive admin dashboard to visualize complaint statistics and category distributions.",
               techStack: "Django, Python, Hugging Face, Bootstrap, PostgreSQL",
               imageUrl: "/projects/bank.png", 
               link: "https://complaint-classifier-django.onrender.com", 
@@ -107,7 +107,7 @@ const Dashboard = () => {
           items: [
 
             {
-              title: "Web Development Intern",
+              title: "Web Developer Intern",
               subtitle: "Syncall Technologies",
               period: "June 2024 - July 2024",
               description: "Collaborated with a cross-functional team to build a web-based employee management system that allowed admins to upload and access employee records. Participated in sprint planning, code reviews, and debugging in an agile setup, contributing to timely feature delivery and integration across modules.",
@@ -119,7 +119,7 @@ const Dashboard = () => {
               title: "Research Intern",
               subtitle: "Active Learning - IIIT Sri City",
               period: "June 2025 - July 2025",
-              description: "Implemented an active learning pipeline for classifying bank customer complaints into predefined categories using NLP and uncertainty sampling. Designed and evaluated query strategies like margin sampling to minimize labeling effort while maintaining high model accuracy. Integrated TF-IDF and chi-square-based feature selection with Random Forests inside an iterative learning loop to simulate real-world deployment constraints.",
+              description: "Worked on implementing Active Learning techniques to reduce the need for large labeled datasets in bank customer complaint classification. Designed and developed an iterative learning pipeline that achieved competitive accuracy using only 27% of the labeled training data. The system integrated uncertainty sampling for data selection and was evaluated using multiple models, including Naive Bayes, Logistic Regression, Decision Tree, and Random Forest, to identify the most efficient classifier for the task.",
               imageUrl: "/experience/iiit.png",
               domain: "Machine Learning"
             }
@@ -149,16 +149,15 @@ const Dashboard = () => {
                 { name: "NextJS", logo: "/skills/nextjs.png" },
                 { name: "Node.js", logo: "/skills/nodejs.png" },
                 { name: "ExpressJS", logo: "/skills/expressjs.png" },
-                { name: "MongoDB", logo: "/skills/mongodb.png" },
-                { name: "Git", logo: "/skills/git.png" }
+                { name: "MongoDB", logo: "/skills/mongodb.png" }
+                
               ]
             },
             {
-              title: "Machine Learning Frameworks",
+              title: "Developer Tools",
               skills: [
-                { name: "Numpy", logo: "/skills/Numpy.png" },
-                { name: "Scikit-learn", logo: "/skills/scikit learn.png" },
-                { name: "Matplotlib", logo: "/skills/matplotlib.png" }
+                { name: "Git", logo: "/skills/git.png" },
+                { name: "Docker", logo: "/skills/docker.jpg" }
               ]
             },
             {
@@ -168,6 +167,32 @@ const Dashboard = () => {
               ]
             }
 
+          ]
+        }, 
+        {
+          title: "Certifications",
+          items: [
+            {
+              title: "Microsoft Azure Fundamentals",
+              subtitle: "Microsoft",
+              period: "2025",
+              description: "Azure cloud computing fundamentals and services",
+              imageUrl: "/education/microsoft_azure.png"
+            },
+            {
+              title: "Oracle AI Foundations",
+              subtitle: "Oracle",
+              period: "2025",
+              description: "Artificial Intelligence and Machine Learning foundations",
+              imageUrl: "/education/oracle.jpeg"
+            },
+            {
+              title: "NPTEL Programming in Java",
+              subtitle: "NPTEL",
+              period: "2024",
+              description: "Artificial Intelligence and Machine Learning foundations",
+              imageUrl: "/education/nptel.png"
+            }
           ]
         },
         {
