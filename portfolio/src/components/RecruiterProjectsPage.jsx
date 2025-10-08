@@ -12,7 +12,7 @@ const projects = [
     longDescription: "Syncruit is a full-stack AI-powered recruitment platform built using Next.js, Express.js, and MongoDB. It streamlines the hiring process for both employers and job seekers by offering intelligent job posting, resume analysis using NLP, and automated interview evaluations. Employers can manage job listings, track applications, and receive candidate insights via an analytics dashboard. Job seekers benefit from mock interviews, skill development feedback, and real-time application tracking. The interview scoring combines Google Generative AI for content evaluation and custom Python scripts for analyzing delivery metrics like confidence, eye contact, and speech clarity. Cloudinary is used for video uploads, and the platform supports asynchronous interviews using the MediaRecorder API and real-time speech transcription.",
     techStack: "Next.js, Node.js, Express.js, MongoDB, Python, Gemini AI, Cloudinary",
     imageUrl: "/projects/syncruit2.png",
-    link: "https://yourdeploymenturl.com",
+    link: "https://syncruit.vercel.app",
     github: "https://github.com/Sahith-Rao/project-k.git", 
     domain: "Web Development, AI/ML"
   },
