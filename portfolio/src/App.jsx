@@ -6,6 +6,17 @@ import ProfileSelection from '@/components/ProfileSelection';
 import Navbar from '@/components/Navbar';
 import { Toaster } from '@/components/ui/toaster';
 
+// ScrollToTop component to reset scroll position on route changes
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 // Lazy load components for better performance
 const Dashboard = lazy(() => import('@/components/Dashboard'));
 const SkillsPage = lazy(() => import('@/components/SkillsPage'));
@@ -106,6 +117,7 @@ function AppContent() {
 
   return (
     <>
+      <ScrollToTop />
       {location.pathname !== '/' && <Navbar />}
       <AnimatePresence mode="wait">
         <Suspense fallback={<LoadingSpinner />}>
