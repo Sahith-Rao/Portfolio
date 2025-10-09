@@ -30,7 +30,7 @@ With a strong foundation in both frontend and backend development, I strive to b
     education: [
       {
         institution: "Chaitanya Bharathi Institute of Technology",
-        degree: "B.Tech in Computer Science (AI-ML)",
+        degree: "B.E in Computer Science (AI-ML)",
         period: "2022 - 2026",
         location: "Hyderabad"
       },
